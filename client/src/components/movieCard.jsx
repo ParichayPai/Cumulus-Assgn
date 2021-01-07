@@ -28,7 +28,6 @@ const useStyles = makeStyles({
 
 export default function MovieCard(data) {
     const {movie} = data;      
-    // console.log(movie)
     const classes = useStyles();
 
     return (

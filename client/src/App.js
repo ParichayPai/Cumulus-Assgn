@@ -81,7 +81,7 @@ class App extends React.Component{
         />
         {this.state.searchBox.length > 0 && this.state.searchText ? 
           <div className="searchBox">
-            {JSON.stringify(this.state.searchBox)}
+            {this.state.searchBox.map(title => <div className="searchItems">{title}</div>)}
           </div> 
         : null}
         </div>
