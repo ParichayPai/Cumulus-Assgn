@@ -26,21 +26,22 @@ class App extends React.Component{
   getData() {
     axios({
       method: 'GET',
-      url: url+'home'
-    }).then(res => {
-      // console.log(res.data)
-      // setData(d.data.data)
-      const data = res.data.data;
-      const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
-      const postData = slice.map((movie, index) => <MovieCard key={index} movie={movie} />)
-      const titles = data.map(movie => movie.Title);
-
-      this.setState({
-          pageCount: Math.ceil(data.length / this.state.perPage),
-          postData,
-          titles
-      });
+      url
     })
+      .then(res => {
+        // console.log(res.data)
+        // setData(d.data.data)
+        const data = res.data.data;
+        const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
+        const postData = slice.map((movie, index) => <MovieCard key={index} movie={movie} />)
+        const titles = data.map(movie => movie.Title);
+
+        this.setState({
+            pageCount: Math.ceil(data.length / this.state.perPage),
+            postData,
+            titles
+        });
+      })
   }
 
   handlePageClick = (e) => {
