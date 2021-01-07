@@ -8,7 +8,7 @@ const data = require('./data.json');
 //     .catch(err => console.log("couldn't connect", err));
 
 module.exports = (app) => {
-    app.get('/home', (req, res, next) => {
+    app.get('/', (req, res, next) => {
         res.json({
             results: data.length,
             total_pages: data.length/10,
