@@ -65,7 +65,7 @@ class App extends React.Component{
     const moviesList = this.state.titles.filter((mov) =>
       mov.toLowerCase().startsWith(text.toLowerCase())
     );
-    console.log(moviesList);
+    // console.log(moviesList);
     this.setState({searchBox: moviesList})
   }
 
@@ -81,7 +81,7 @@ class App extends React.Component{
         />
         {this.state.searchBox.length > 0 && this.state.searchText ? 
           <div className="searchBox">
-            {this.state.searchBox.map(title => <div className="searchItems">{title}</div>)}
+            {this.state.searchBox.map(title => <div className="searchItems" key={title}>{title}</div>)}
           </div> 
         : null}
         </div>
